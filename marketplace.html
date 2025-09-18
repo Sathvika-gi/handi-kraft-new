@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HandiKraft - Marketplace</title>
+    <link rel="stylesheet" href="styles2.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700&family=Playfair+Display:wght@700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <div class="nav-container">
+        <div class="nav-left">
+          <div class="logo">
+            <div class="logo-icon"><img src="images/logo].jpg" alt="logo"> </div>
+            <span class="logo-text">HandiKraft</span>
+          </div>
+          <ul class="nav-menu">
+            <li><a href="home.html" class="nav-link">Home</a></li>
+            <li><a href="trainers.html" class="nav-link">Trainers</a></li>
+            <li><a href="programs.html" class="nav-link">Programs</a></li>
+            <li><a href="marketplace.html" class="nav-link active">Marketplace</a></li>
+            <li><a href="resources.html" class="nav-link">Resources</a></li>
+            <li><a href="about.html" class="nav-link">About Us</a></li>
+          </ul>
+        </div>
+        <div class="nav-right">
+          <div class="search-bar">
+            <div class="search-icon">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M19.5306 18.4694L14.8366 13.7762C17.6629 10.383 17.3204 5.36693 14.0591 2.38935C10.7978 -0.588237 5.77134 -0.474001 2.64867 2.64867C-0.474001 5.77134 -0.588237 10.7978 2.38935 14.0591C5.36693 17.3204 10.383 17.6629 13.7762 14.8366L18.4694 19.5306C18.7624 19.8237 19.2376 19.8237 19.5306 19.5306C19.8237 19.2376 19.8237 18.7624 19.5306 18.4694ZM1.75 8.5C1.75 4.77208 4.77208 1.75 8.5 1.75C12.2279 1.75 15.25 4.77208 15.25 8.5C15.25 12.2279 12.2279 15.25 8.5 15.25C4.77379 15.2459 1.75413 12.2262 1.75 8.5Z"
+                  fill="#8A7061"
+                />
+              </svg>
+            </div>
+            <input type="text" placeholder="Search" class="search-input" />
+          </div>
+          <div class="profile-notification">
+            <div class="notification-icon">
+              <svg width="16" height="18" viewBox="0 0 16 18" fill="none">
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M15.3281 12.7453C14.8945 11.9984 14.25 9.88516 14.25 7.125C14.25 3.67322 11.4518 0.875 8 0.875C4.54822 0.875 1.75 3.67322 1.75 7.125C1.75 9.88594 1.10469 11.9984 0.671094 12.7453C0.445722 13.1318 0.444082 13.6092 0.666796 13.9973C0.889509 14.3853 1.30261 14.6247 1.75 14.625H4.93828C5.23556 16.0796 6.51529 17.1243 8 17.1243C9.48471 17.1243 10.7644 16.0796 11.0617 14.625H14.25C14.6972 14.6244 15.1101 14.3849 15.3326 13.9969C15.5551 13.609 15.5534 13.1317 15.3281 12.7453ZM8 15.875C7.20562 15.8748 6.49761 15.3739 6.23281 14.625H9.76719C9.50239 15.3739 8.79438 15.8748 8 15.875ZM1.75 13.375C2.35156 12.3406 3 9.94375 3 7.125C3 4.36358 5.23858 2.125 8 2.125C10.7614 2.125 13 4.36358 13 7.125C13 9.94141 13.6469 12.3383 14.25 13.375H1.75Z"
+                  fill="#171412"
+                />
+              </svg>
+            </div>
+            <a href="user-profile.html"><img
+              src="images/prof-img.jpeg"
+              alt="Profile"
+              class="profile-avatar"
+            /></a>
+          </div>
+        </div>
+        <div class="mobile-menu-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </nav>
+
+    <main class="main">
+      <div class="container">
+        <section class="hero">
+          <div class="hero-content">
+            <h1 class="hero-title">Marketplace</h1>
+            <p class="hero-description">
+              Discover unique handcrafted items from skilled artisans across the
+              country.
+            </p>
+          </div>
+        </section>
+
+        <section class="search-section">
+          <div class="main-search-bar">
+            <div class="search-icon"></div>
+            <input
+              type="text"
+              placeholder="Search for products, artisans, or categories"
+              class="main-search-input"
+            />
+          </div>
+        </section>
+
+        <section class="filters">
+          <div class="filter-buttons">
+            <button class="filter-btn active" data-category="all">
+              All Products
+            </button>
+            <button class="filter-btn" data-category="pottery">Pottery</button>
+            <button class="filter-btn" data-category="textiles">
+              Textiles
+            </button>
+            <button class="filter-btn" data-category="woodwork">
+              Woodwork
+            </button>
+            <button class="filter-btn" data-category="jewellery">
+              Jewellery
+            </button>
+          </div>
+        </section>
+
+        <section class="featured-products">
+          <h2 class="section-title">Featured Products</h2>
+          <div class="products-grid">
+            <div class="product-card" data-category="pottery">
+              <a  function="onclick" href="product-detail.html"><img
+                src="https://cdn.builder.io/api/v1/image/assets/TEMP/cc97a24fddacaccc8acc26fb4bc98e7ee6ae8306?width=480"
+                alt="Handcrafted Pottery"
+                class="product-image"
+              /></a>
+              <div class="product-info">
+                <h3 class="product-title">Handcrafted Pottery</h3>
+                <p class="product-description">
+                  Explore our collection of unique pottery
+                </p>
+              </div>
+            </div>
+            <div class="product-card" data-category="textiles">
+              <a  function="onclick" href="product-detail.html"><img
+                src="images/images (1).jpeg"
+                alt="Woven Textiles"
+                class="product-image"
+              /></a>
+              <div class="product-info">
+                <h3 class="product-title">Woven Textiles</h3>
+                <p class="product-description">
+                  Discover vibrant textiles from skilled weavers
+                </p>
+              </div>
+            </div>
+            <div class="product-card" data-category="woodwork">
+              <a  function="onclick" href="product-detail.html"><img
+                src="images/lord-shiva-pichadanar-and-worshipper-17th-century-wooden-carvings-in-meenakshi-sundareswarar-temple-chariot-at-madurai-tamil-nadu-south-india-2R4BA4C.jpg"
+                alt="Wooden Carvings"
+                class="product-image"
+              /></a>
+              <div class="product-info">
+                <h3 class="product-title">Wooden Carvings</h3>
+                <p class="product-description">
+                  Admire the artistry of our wooden carvings
+                </p>
+              </div>
+            </div>
+            <div class="product-card" data-category="jewellery">
+              <a  function="onclick" href="product-detail.html"><img
+                src="images/WhatsApp Image 2025-07-01 at 19.18.51_4364e70c.jpg"
+                alt="Handmade Jewelry"
+                class="product-image"
+              /></a>
+              <div class="product-info">
+                <h3 class="product-title">Handmade Jewelry</h3>
+                <p class="product-description">
+                  Find the perfect piece of handmade jewelry
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="browse-categories">
+          <h2 class="section-title">Browse by Category</h2>
+          <div class="categories-grid">
+            <div class="category-card" data-category="pottery">
+              <img
+                src="images/WhatsApp Image 2025-07-01 at 19.16.59_b292d817.jpg"
+                alt="Pottery"
+                class="category-image"
+              />
+              <h3 class="category-title">Pottery</h3>
+            </div>
+            <div class="category-card" data-category="textiles">
+              <img
+                src="images/WhatsApp Image 2025-07-01 at 19.54.20_98ea4886.jpg"
+                alt="Textiles"
+                class="category-image"
+              />
+              <h3 class="category-title">Textiles</h3>
+            </div>
+            <div class="category-card" data-category="woodwork">
+              <img
+                src="images/WhatsApp Image 2025-07-01 at 19.17.00_8634f9e4.jpg"
+                alt="Woodwork"
+                class="category-image"
+              />
+              <h3 class="category-title">Woodwork</h3>
+            </div>
+            <div class="category-card" data-category="jewellery">
+              <img
+                src="images/WhatsApp Image 2025-07-01 at 19.18.51_4364e70c.jpg"
+                alt="Jewelry"
+                class="category-image"
+              />
+              <h3 class="category-title">Jewelry</h3>
+            </div>
+            <div class="category-card">
+              <img
+                src="images/images.jpeg"
+                alt="Paintings"
+                class="category-image"
+              />
+              <h3 class="category-title">Paintings</h3>
+            </div>
+            <div class="category-card">
+              <img
+                src="images/download (3).jpeg"
+                alt="Sculptures"
+                class="category-image"
+              />
+              <h3 class="category-title">Sculptures</h3>
+            </div>
+          </div>
+        </section>
+
+        <section class="artisans">
+          <h2 class="section-title">Artisans</h2>
+          <div class="artisans-grid">
+            <div class="artisan-card">
+              <a function="onclick" href="profile.html"><img
+                src="images/download.jpeg"
+                alt="Chinnadurai"
+                class="artisan-image"
+              /></a>
+              <h3 class="artisan-name">Chinnadurai</h3>
+              <p class="artisan-specialty">Pottery</p>
+            </div>
+            <div class="artisan-card">
+              <a function="onclick" href="profile.html"><img
+                src="images/download (1).jpeg"
+                alt="Arun"
+                class="artisan-image"
+              /></a>
+              <h3 class="artisan-name">Arun</h3>
+              <p class="artisan-specialty">Weaving</p>
+            </div>
+            <div class="artisan-card">
+              <a function="onclick" href="profile.html"><img
+                src="images/download (5).jpeg"
+                alt="Anita"
+                class="artisan-image"
+              /></a>
+              <h3 class="artisan-name">Anita</h3>
+              <p class="artisan-specialty">Woodwork</p>
+            </div>
+            <div class="artisan-card">
+              <a function="onclick" href="profile.html"><img
+                src="images/download (2).jpeg"
+                alt="Kamla"
+                class="artisan-image"
+              /></a>
+              <h3 class="artisan-name">Kamla</h3>
+              <p class="artisan-specialty">Jewelry</p>
+            </div>
+            <div class="artisan-card">
+              <a function="onclick" href="profile.html"><img
+                src="images/self-help-underprivileged-rural-women-doing-folk-painting-to-support-their-families-west-bengal-india-earn-little-money-40563974.webp"
+                alt="Selvi"
+                class="artisan-image"
+              /></a>
+              <h3 class="artisan-name">Selvi</h3>
+              <p class="artisan-specialty">Paintings</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="recently-added">
+          <h2 class="section-title">Recently Added</h2>
+          <div class="products-grid">
+            <div class="product-card">
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets/TEMP/011efa989d13660a0af92511e07e2e2c4a692cdc?width=352"
+                alt="Handcrafted Vase"
+                class="product-image"
+              />
+              <div class="product-info">
+                <h3 class="product-title">Handcrafted Vase</h3>
+                <p class="product-description">By Priya Sharma</p>
+              </div>
+            </div>
+            <div class="product-card">
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets/TEMP/e0d35693820980f97859e2f72a5905d34f0a3f49?width=352"
+                alt="Silk Scarf"
+                class="product-image"
+              />
+              <div class="product-info">
+                <h3 class="product-title">Silk Scarf</h3>
+                <p class="product-description">By Rajesh Verma</p>
+              </div>
+            </div>
+            <div class="product-card">
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets/TEMP/ded81956fb960bf3a937b2cf4295110a9b3cf545?width=352"
+                alt="Wooden Elephant"
+                class="product-image"
+              />
+              <div class="product-info">
+                <h3 class="product-title">Wooden Elephant</h3>
+                <p class="product-description">By Anita Patel</p>
+              </div>
+            </div>
+            <div class="product-card">
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets/TEMP/81f8d8f41fd800f9c0062e2736da44696be62323?width=352"
+                alt="Silver Earrings"
+                class="product-image"
+              />
+              <div class="product-info">
+                <h3 class="product-title">Silver Earrings</h3>
+                <p class="product-description">By Vijay Singh</p>
+              </div>
+            </div>
+            <div class="product-card">
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets/TEMP/83f079747e2b24cc130a4887cee8d98a5da68d6c?width=352"
+                alt="Landscape Painting"
+                class="product-image"
+              />
+              <div class="product-info">
+                <h3 class="product-title">Landscape Painting</h3>
+                <p class="product-description">By Deepa Rao</p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-links">
+          <a href="about.html" class="footer-link">About Us</a>
+          <a href="contact.html" class="footer-link">Contact</a>
+          <a href="#" class="footer-link">Privacy Policy</a>
+          <a href="#" class="footer-link">Terms of Service</a>
+        </div>
+        <div class="footer-copyright">
+          <p>@2024 CraftConnect. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script2.js"></script>
+  </body>
+</html>

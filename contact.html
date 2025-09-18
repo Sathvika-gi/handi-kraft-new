@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Navigation */
+.navbar {
+  background: #ffffff;
+  border-bottom: 1px solid #e5e8eb;
+  position: sticky;
+  padding: 10px;
+  z-index: 100;
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.65rem 2.5rem;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  gap: 2.25rem;
+  margin: 0;
+}
+
+.nav-link {
+  color: #171412;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 400;
+  transition: color 0.2s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: #ed7829;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  background: #f5f2f0;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  min-width: 200px;
+}
+
+.search-icon {
+  padding: 0.5rem 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.search-input {
+  background: #f5f2f0;
+  border: none;
+  padding: 0.5rem 1rem 0.5rem 0.5rem;
+  flex: 1;
+  color: #8a7061;
+  font-size: 1rem;
+  display:inline;
+}
+
+
+
+.search-input::placeholder {
+  color: #8a7061;
+}
+
+.search-input:focus {
+  outline: none;
+}
+
+.nav-buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.profile-notification {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #f5f2f0;
+  border-radius: 1.25rem;
+  padding: 0.625rem;
+}
+
+.notification-icon {
+  display: flex;
+  align-items: center;
+}
+
+.profile-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.mobile-menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 4px;
+}
+
+.mobile-menu-toggle span {
+  width: 24px;
+  height: 3px;
+  background: #171412;
+  transition: all 0.3s ease;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logo-icon img {
+  width: 36px;
+  height: 36px;
+  position: relative; 
+}
+
+.logo-icon{
+  display:flex;
+}
+
+.logo-text {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #171412;
+}
+
+:root {
+      --primary: #e44d26;
+      --primary-dark: #d3381a;
+      --text: #1a1a1a;
+      --background: #ffffff;
+      --card-bg: #f9f9f9;
+      --border: #e0e0e0;
+    }
+    [data-theme="dark"] {
+      --primary: #ff7e5f;
+      --primary-dark: #e5553c;
+      --text: #f1f1f1;
+      --background: #1a1a1a;
+      --card-bg: #2a2a2a;
+      --border: #444;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: var(--background);
+      color: var(--text);
+    }
+    .header {
+      background: linear-gradient(to right, #f44336, #e44d26);
+      color: white;
+      padding: 2rem;
+      text-align: center;
+    }
+    .grid {
+      display: grid;
+      gap: 1.5rem;
+      margin: 2rem;
+    }
+    .grid-4 {
+      grid-template-columns: repeat(4, 1fr);
+    }
+    .grid-2 {
+      grid-template-columns: 1fr 1fr;
+    }
+    .card {
+      background: var(--card-bg);
+      padding: 1.5rem;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+    .icon-text {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-weight: bold;
+    }
+    form input, form textarea {
+      width: 100%;
+      padding: 0.75rem;
+      margin-top: 0.5rem;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      font-size: 1rem;
+      background: white;
+    }
+    form label {
+      display: block;
+      margin-top: 1rem;
+      font-weight: 500;
+    }
+    .btn {
+      margin-top: 1.5rem;
+      background: linear-gradient(to right, #ff5722, #e44d26);
+      border: none;
+      color: white;
+      font-size: 1rem;
+      padding: 0.75rem 1.5rem;
+      cursor: pointer;
+      border-radius: 6px;
+    }
+    .faq-question {
+      margin-bottom: 1rem;
+    }
+    .footer-grid {
+      display: flex;
+      gap: 2rem;
+      padding: 2rem;
+      background: var(--card-bg);
+      justify-content: space-around;
+    }
+    .theme-toggle {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: var(--primary);
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    a {
+      color: var(--primary);
+    }
+
+    .footer {
+  padding: 2.5rem 0;
+  border-top: 1px solid #e5e8eb;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 6rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.footer-link {
+  color: #8a7061;
+  text-decoration: none;
+  font-size: 1rem;
+  min-width: 160px;
+  text-align: center;
+  transition: color 0.2s ease;
+}
+
+.footer-link:hover {
+  color: #b35516;
+}
+
+.footer-copyright {
+  text-align: center;
+  color: #8a7061;
+  font-size: 1rem;
+}
+.footer-text{
+  text-align:center;
+  color: #8a7061;
+  font-size: 1rem;
+}
+
+form input,
+form textarea {
+  width: 100%;          /* Adjust width as needed (e.g., 40%, 300px, etc.) */
+  padding: 12px 12px;   /* Reduces the height */
+  font-size: 14px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  margin-bottom: 16px;
+}
+
+form label {
+  display: block;
+  margin-top: 16px;
+  font-weight: 600;
+}
+    @media (max-width: 900px) {
+      .grid-4, .grid-2, .footer-grid {
+        grid-template-columns: 1fr;
+        display: block;
+      }
+    }
+
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+      <div class="nav-container">
+        <div class="nav-left">
+          <div class="logo">
+            <div class="logo-icon"><img src="images/logo].jpg" alt="logo"> </div>
+            <span class="logo-text">HandiKraft</span>
+          </div>
+          <ul class="nav-menu">
+            <li><a href="home.html" class="nav-link">Home</a></li>
+            <li><a href="trainers.html" class="nav-link">Trainers</a></li>
+            <li><a href="programs.html" class="nav-link">Programs</a></li>
+            <li><a href="marketplace.html" class="nav-link">Marketplace</a></li>
+            <li>
+              <a href="resources.html" class="nav-link">Resources</a>
+            </li>
+            <li><a href="about.html" class="nav-link">About Us</a></li>
+          </ul>
+        </div>
+        <div class="nav-right">
+          <div class="search-bar">
+            <div class="search-icon">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M19.5306 18.4694L14.8366 13.7762C17.6629 10.383 17.3204 5.36693 14.0591 2.38935C10.7978 -0.588237 5.77134 -0.474001 2.64867 2.64867C-0.474001 5.77134 -0.588237 10.7978 2.38935 14.0591C5.36693 17.3204 10.383 17.6629 13.7762 14.8366L18.4694 19.5306C18.7624 19.8237 19.2376 19.8237 19.5306 19.5306C19.8237 19.2376 19.8237 18.7624 19.5306 18.4694ZM1.75 8.5C1.75 4.77208 4.77208 1.75 8.5 1.75C12.2279 1.75 15.25 4.77208 15.25 8.5C15.25 12.2279 12.2279 15.25 8.5 15.25C4.77379 15.2459 1.75413 12.2262 1.75 8.5Z"
+                  fill="#8A7061"
+                />
+              </svg>
+            </div>
+            <input type="text" placeholder="Search" class="search-input" />
+          </div>
+          <div class="profile-notification">
+            <div class="notification-icon">
+              <svg width="16" height="18" viewBox="0 0 16 18" fill="none">
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M15.3281 12.7453C14.8945 11.9984 14.25 9.88516 14.25 7.125C14.25 3.67322 11.4518 0.875 8 0.875C4.54822 0.875 1.75 3.67322 1.75 7.125C1.75 9.88594 1.10469 11.9984 0.671094 12.7453C0.445722 13.1318 0.444082 13.6092 0.666796 13.9973C0.889509 14.3853 1.30261 14.6247 1.75 14.625H4.93828C5.23556 16.0796 6.51529 17.1243 8 17.1243C9.48471 17.1243 10.7644 16.0796 11.0617 14.625H14.25C14.6972 14.6244 15.1101 14.3849 15.3326 13.9969C15.5551 13.609 15.5534 13.1317 15.3281 12.7453ZM8 15.875C7.20562 15.8748 6.49761 15.3739 6.23281 14.625H9.76719C9.50239 15.3739 8.79438 15.8748 8 15.875ZM1.75 13.375C2.35156 12.3406 3 9.94375 3 7.125C3 4.36358 5.23858 2.125 8 2.125C10.7614 2.125 13 4.36358 13 7.125C13 9.94141 13.6469 12.3383 14.25 13.375H1.75Z"
+                  fill="#171412"
+                />
+              </svg>
+            </div>
+            <a href="user-profile.html"><img
+              src="./images/prof-img.jpeg"
+              alt="Profile"
+              class="profile-avatar"
+            /></a>
+          </div>
+        </div>
+        <div class="mobile-menu-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </nav>
+
+    <header class="header">
+    <h1>Contact Us</h1>
+    <p>Get in touch with our team – we're here to help you</p>
+  </header>
+
+  <section class="grid grid-4">
+    <div class="card"><p class="icon-text">📍 Head Office</p><p>123 Craft Street<br>Chennai, Tamil Nadu<br>600001, India</p></div>
+    <div class="card"><p class="icon-text">📞 Phone</p><p>+91 98765 43210<br>+91 87654 32109<br>Toll Free: 1800-123-4567</p></div>
+    <div class="card"><p class="icon-text">✉️ Email</p><p>info@handloomhub.com<br>support@handloomhub.com<br>artisan@handloomhub.com</p></div>
+    <div class="card"><p class="icon-text">⏰ Business Hours</p><p>Mon - Fri: 9 AM - 6 PM<br>Saturday: 10 AM - 4 PM<br>Sunday: Closed</p></div>
+  </section>
+
+  <section class="grid grid-2">
+    <div class="card" aria-labelledby="contact-form-title">
+      <h2 id="contact-form-title">Send us a Message</h2>
+      <form>
+        <label for="name">Full Name *</label>
+        <input type="text" id="name" name="name" required aria-required="true" placeholder="Enter your full name" />
+
+        <label for="email">Email Address *</label>
+        <input type="email" id="email" name="email" required aria-required="true" placeholder="Enter your email address" />
+
+        <label for="subject">Subject *</label>
+        <input type="text" id="subject" name="subject" required aria-required="true" placeholder="What is this regarding?" />
+
+        <label for="message">Message *</label>
+        <textarea id="message" name="message" rows="5" required aria-required="true" placeholder="Tell us more about your inquiry..."></textarea>
+
+        <button class="btn" type="submit">Send Message</button>
+      </form>
+    </div>
+
+    <div class="card">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-question">
+        <strong>How do I become an artisan partner?</strong><br>
+        Apply via our registration form or contact us. We’ll review and respond in 3–5 business days.
+      </div>
+      <div class="faq-question">
+        <strong>What is your return policy?</strong><br>
+        30-day return policy for damaged or incorrect items.
+      </div>
+      <div class="faq-question">
+        <strong>Do you offer international shipping?</strong><br>
+        Yes, worldwide. Contact us for quotes.
+      </div>
+      <div class="faq-question">
+        <strong>How can I track my order?</strong><br>
+        Tracking info sent via email and visible in your account.
+      </div>
+
+      <div class="card" style="margin-top: 1.5rem;">
+        <h3>Need Immediate Help?</h3>
+        <p>📱 WhatsApp: +91 98765 43210</p>
+        <p>💬 Live Chat: Available 9 AM - 6 PM</p>
+        <button class="btn" style="background: transparent; border: 2px solid var(--primary); color: var(--primary);">Start Live Chat</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="footer-grid">
+    <div><strong>Kerala Office</strong><br>Marine Drive, Kochi<br>Kerala 682031<br>📞 +91 98765 43211</div>
+    <div><strong>Karnataka Office</strong><br>Silk Board, Bangalore<br>Karnataka 560100<br>📞 +91 98765 43212</div>
+    <div><strong>Andhra Pradesh Office</strong><br>Banjara Hills, Hyderabad<br>Telangana 500034<br>📞 +91 98765 43213</div>
+    </section>
+    
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-links">
+          <a href="about.html" class="footer-link">About Us</a>
+          <a href="contact.html" class="footer-link">Contact</a>
+          <a href="#" class="footer-link">Privacy Policy</a>
+          <a href="#" class="footer-link">Terms of Service</a>
+        </div>
+        <div class="footer-copyright">
+          <p>@2025 HandiKraft. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+
+
+
+
+
+
+</body>
+</html>

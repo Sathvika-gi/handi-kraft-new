@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+    :root {
+      --primary: #b5651d;
+      --accent: #ffd700;
+      --text: #333;
+      --bg: #fffaf0;
+      --card: #ffffff;
+      --border: #ddd;
+    }
+    
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      margin: 0;
+      
+    }
+    h1 {
+      text-align: center;
+      color: var(--primary);
+    }
+    .cart {
+      max-width: 900px;
+      margin: auto;
+    }
+    .item {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      background: var(--card);
+      padding: 1rem;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      width:80%;
+      margin-bottom: 1rem;
+      padding:30px;
+    }
+
+    .item-box{
+        align-items:center;
+        padding: 20px 350px;
+        width:60%;
+        justify-content: center;
+    }
+    .item-details {
+      width:80%;
+    }
+    .item-title {
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+    .item-desc {
+      font-size: 0.9rem;
+      margin-top: 0.2rem;
+    }
+    .delivery-date {
+      font-size: 0.8rem;
+      color: gray;
+    }
+    .qty {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      
+    }
+    .qty input {
+      width: 40px;
+      text-align: center;
+      
+    }
+    .price {
+      font-weight: bold;
+      gap:1.5rem;
+      margin-left:30px;
+    }
+    .remove {
+      background: transparent;
+      border: none;
+      color: crimson;
+      cursor: pointer;
+      font-weight: bold;
+      margin-left:30px;
+    }
+    .checkout {
+      text-align: right;
+      margin-top: 2rem;
+      align-items: center;
+      justify-content: center;
+      padding:30px 700px;
+    }
+    .btn-checkout {
+      background: var(--primary);
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      cursor: pointer;
+      border-radius: 6px;
+      align-items: center;
+    }
+    
+
+    .navbar {
+  background: #ffffff;
+  border-bottom: 1px solid #e5e8eb;
+  position: sticky;
+  padding: 5px;
+  z-index: 100;
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.65rem 2.5rem;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  gap: 2.25rem;
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 0.5rem;;
+}
+
+.nav-link {
+  color: #171412;
+  text-decoration: none;
+  font-size: 0.875rem;
+  font-weight: 360;
+  transition: color 0.2s ease;
+  font-size: 1rem;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: #ed7829;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  background: #f5f2f0;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  min-width: 200px;
+}
+
+.search-icon {
+  padding: 0.5rem 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.search-input {
+  background: #f5f2f0;
+  border: none;
+  padding: 0.5rem 1rem 0.5rem 0.5rem;
+  flex: 1;
+  color: #8a7061;
+  font-size: 1rem;
+}
+
+.search-input::placeholder {
+  color: #8a7061;
+}
+
+.search-input:focus {
+  outline: none;
+}
+
+.nav-buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+
+.profile-notification {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #f5f2f0;
+  border-radius: 1.25rem;
+  padding: 0.625rem;
+}
+
+.notification-icon {
+  display: flex;
+  align-items: center;
+}
+
+.profile-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logo-icon img {
+  width: 36px;
+  height: 36px;
+  position: relative; 
+}
+
+.logo-icon{
+  display:flex;
+}
+
+.logo-text {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #171412;
+}
+
+.mobile-menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 4px;
+}
+
+.mobile-menu-toggle span {
+  width: 24px;
+  height: 3px;
+  background: #171412;
+  transition: all 0.3s ease;
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+  .nav-container {
+    padding: 0.65rem 1rem;
+  }
+  
+  .nav-left {
+    gap: 1rem;
+  }
+  
+  .nav-menu {
+    display: none;
+  }
+  
+  .mobile-menu-toggle {
+    display: flex;
+  }
+  
+  .nav-right {
+    gap: 1rem;
+  }
+  
+  .search-bar {
+    min-width: 150px;
+  }
+  
+  .search-input {
+    font-size: 0.875rem;
+  }
+  
+  .logo-text {
+    font-size: 1rem;
+  }
+  
+  .profile-avatar {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .item-box {
+    padding: 10px 20px;
+    width: 100%;
+  }
+  
+  .item {
+    flex-direction: column;
+    width: 100%;
+    padding: 20px;
+    gap: 1rem;
+  }
+  
+  .item-details {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .item-title {
+    font-size: 1rem;
+  }
+  
+  .item-desc {
+    font-size: 0.85rem;
+  }
+  
+  .delivery-date {
+    font-size: 0.75rem;
+  }
+  
+  .qty {
+    justify-content: center;
+  }
+  
+  .price {
+    margin-left: 0;
+    font-size: 1.1rem;
+  }
+  
+  .remove {
+    margin-left: 0;
+  }
+  
+  .checkout {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .btn-checkout {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-container {
+    padding: 0.65rem 0.5rem;
+  }
+  
+  .nav-left {
+    gap: 0.5rem;
+  }
+  
+  .nav-right {
+    gap: 0.5rem;
+  }
+  
+  .search-bar {
+    min-width: 120px;
+  }
+  
+  .search-input {
+    font-size: 0.8rem;
+    padding: 0.4rem 0.8rem 0.4rem 0.4rem;
+  }
+  
+  .logo-text {
+    font-size: 0.9rem;
+  }
+  
+  .profile-avatar {
+    width: 28px;
+    height: 28px;
+  }
+  
+  .item-box {
+    padding: 10px;
+  }
+  
+  .item {
+    padding: 15px;
+  }
+  
+  .item-title {
+    font-size: 0.95rem;
+  }
+  
+  .item-desc {
+    font-size: 0.8rem;
+  }
+  
+  .delivery-date {
+    font-size: 0.7rem;
+  }
+  
+  .qty input {
+    width: 35px;
+  }
+  
+  .price {
+    font-size: 1rem;
+  }
+  
+  .checkout {
+    padding: 15px;
+  }
+  
+  .btn-checkout {
+    padding: 0.65rem 1.25rem;
+    font-size: 0.9rem;
+  }
+}
+  </style>
+
+</head>
+<body>
+    <nav class="navbar">
+      <div class="nav-container">
+        <div class="nav-left">
+          <div class="logo">
+            <div class="logo-icon"> <img src="images/logo].jpg" alt="logo"/> </div>
+            <span class="logo-text">HandiKraft</span>
+          </div>
+          <ul class="nav-menu">
+            <li><a href="home.html" class="nav-link active">Home</a></li>
+            <li><a href="trainers.html" class="nav-link">Trainers</a></li>
+            <li><a href="programs.html" class="nav-link">Programs</a></li>
+            <li><a href="marketplace.html" class="nav-link">Marketplace</a></li>
+            <li><a href="resources.html" class="nav-link">Resources</a></li>
+            <li><a href="about.html" class="nav-link">About Us</a></li>
+          </ul>
+        </div>
+        <div class="nav-right">
+          <div class="search-bar">
+            <div class="search-icon">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M19.5306 18.4694L14.8366 13.7762C17.6629 10.383 17.3204 5.36693 14.0591 2.38935C10.7978 -0.588237 5.77134 -0.474001 2.64867 2.64867C-0.474001 5.77134 -0.588237 10.7978 2.38935 14.0591C5.36693 17.3204 10.383 17.6629 13.7762 14.8366L18.4694 19.5306C18.7624 19.8237 19.2376 19.8237 19.5306 19.5306C19.8237 19.2376 19.8237 18.7624 19.5306 18.4694ZM1.75 8.5C1.75 4.77208 4.77208 1.75 8.5 1.75C12.2279 1.75 15.25 4.77208 15.25 8.5C15.25 12.2279 12.2279 15.25 8.5 15.25C4.77379 15.2459 1.75413 12.2262 1.75 8.5Z"
+                  fill="#8A7061"
+                />
+              </svg>
+            </div>
+            <input type="text" placeholder="Search" class="search-input" />
+          </div>
+          <div class="profile-notification">
+            <div class="notification-icon">
+              <svg width="16" height="18" viewBox="0 0 16 18" fill="none">
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M15.3281 12.7453C14.8945 11.9984 14.25 9.88516 14.25 7.125C14.25 3.67322 11.4518 0.875 8 0.875C4.54822 0.875 1.75 3.67322 1.75 7.125C1.75 9.88594 1.10469 11.9984 0.671094 12.7453C0.445722 13.1318 0.444082 13.6092 0.666796 13.9973C0.889509 14.3853 1.30261 14.6247 1.75 14.625H4.93828C5.23556 16.0796 6.51529 17.1243 8 17.1243C9.48471 17.1243 10.7644 16.0796 11.0617 14.625H14.25C14.6972 14.6244 15.1101 14.3849 15.3326 13.9969C15.5551 13.609 15.5534 13.1317 15.3281 12.7453ZM8 15.875C7.20562 15.8748 6.49761 15.3739 6.23281 14.625H9.76719C9.50239 15.3739 8.79438 15.8748 8 15.875ZM1.75 13.375C2.35156 12.3406 3 9.94375 3 7.125C3 4.36358 5.23858 2.125 8 2.125C10.7614 2.125 13 4.36358 13 7.125C13 9.94141 13.6469 12.3383 14.25 13.375H1.75Z"
+                  fill="#171412"
+                />
+              </svg>
+            </div>
+            <a href="user-profile.html"><img
+              src="images/prof-img.jpeg"
+              alt="Profile"
+              class="profile-avatar" 
+            /></a>
+          </div>
+        </div>
+        <div class="mobile-menu-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </nav>
+
+    <div class="item-box">
+    <div class="item">
+      <div class="item-details">
+        <div class="item-title">Kanjivaram Silk Saree</div>
+        <div class="item-desc">Traditional handwoven silk saree with rich zari border</div>
+        <div class="delivery-date">Expected delivery: Jul 10 - Jul 12</div>
+      </div>
+      <div class="qty">
+        <button onclick="changeQty(this, -1)">-</button>
+        
+        <input type="number" value="1" min="1" placeholder="Enter quantity" />
+        <button onclick="changeQty(this, 1)">+</button>
+      </div>
+      <div class="price">₹20,000</div>
+      <button class="remove" onclick="removeItem(this)">Remove</button>
+    </div>
+
+    <div class="item">
+      <div class="item-details">
+        <div class="item-title">Pochampally Ikat Dupatta</div>
+        <div class="item-desc">Elegant cotton dupatta from Telangana's handloom clusters</div>
+        <div class="delivery-date">Expected delivery: Jul 9 - Jul 11</div>
+      </div>
+      <div class="qty">
+        <button onclick="changeQty(this, -1)">-</button>
+        <input type="number" value="2" min="1" placeholder="Enter quantity"/>
+        <button onclick="changeQty(this, 1)">+</button>
+      </div>
+      <div class="price">₹3,000</div>
+      <button class="remove" onclick="removeItem(this)">Remove</button>
+    </div>
+    </div>
+
+    <div class="checkout">
+      <button class="btn-checkout">Proceed to Checkout</button>
+    </div>
+  </div>
+
+  <script>
+    function changeQty(button, delta) {
+      const input = button.parentElement.querySelector('input');
+      let val = parseInt(input.value) + delta;
+      input.value = val < 1 ? 1 : val;
+    }
+
+    function removeItem(btn) {
+      const item = btn.closest('.item');
+      item.remove();
+    }
+
+    function toggleTheme() {
+      const html = document.documentElement;
+      const theme = html.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+      html.setAttribute('data-theme', theme);
+    }
+  </script>
+
+</body>
+</html>

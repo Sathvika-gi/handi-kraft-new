@@ -1,0 +1,890 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trainer Profiles - HandiKraft</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* Reset and Base Styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Plus Jakarta Sans", sans-serif;
+        line-height: 1.6;
+        color: #171412;
+        background-color: #ffffff;
+      }
+
+      /* Color Variables */
+      :root {
+        --brand-primary: #ed7829;
+        --brand-secondary: #171412;
+        --brand-muted: #8a7061;
+        --brand-light: #f5f2f0;
+        --white: #ffffff;
+        --border-color: #e5e8eb;
+        --border-light: #e5dedb;
+      }
+
+      /* Container */
+      .container {
+        max-width: 1440px;
+        margin: 0 auto;
+        padding: 0 80px;
+      }
+
+      /* Navigation */
+      .navbar {
+        background: #ffffff;
+        border-bottom: 1px solid #e5e8eb;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+      }
+
+      .nav-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0.75rem 2.5rem;
+        max-width: 1440px;
+        margin: 0 auto;
+      }
+
+      .nav-left {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+      }
+
+      .logo-icon img {
+        width: 36px;
+        height: 36px;
+        position: relative; 
+      }
+
+      .logo-icon{
+        display:flex;
+      }
+
+      .logo-text {
+        font-size: 1.125rem;
+        font-weight: 700;
+        color: #171412;
+        color: var(--brand-secondary);
+      }
+
+      .nav-menu {
+        display: flex;
+        list-style: none;
+        gap: 2.25rem;
+        margin: 0;
+      }
+
+      .nav-link {
+        color: #171412;
+        text-decoration: none;
+        font-size: 0.875rem;
+        font-weight: 400;
+        transition: color 0.2s ease;
+      }
+
+      .nav-link:hover,
+      .nav-link.active {
+        color: #ed7829;
+      }
+
+      .nav-right {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+      }
+
+      .search-bar {
+        display: flex;
+        align-items: center;
+        background: #f5f2f0;
+        border-radius: 0.75rem;
+        overflow: hidden;
+        min-width: 200px;
+      }
+
+      .search-icon {
+        padding: 0.5rem 1rem;
+        display: flex;
+        align-items: center;
+      }
+
+      .search-input {
+        background: #f5f2f0;
+        border: none;
+        padding: 0.5rem 1rem 0.5rem 0.5rem;
+        flex: 1;
+        color: #8a7061;
+        font-size: 1rem;
+      }
+
+      .search-input::placeholder {
+        color: #8a7061;
+      }
+
+      .search-input:focus {
+        outline: none;
+      }
+
+      .nav-buttons {
+        display: flex;
+        gap: 0.5rem;
+      }
+
+      .profile-notification {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: #f5f2f0;
+        border-radius: 1.25rem;
+        padding: 0.625rem;
+      }
+
+      .notification-icon {
+        display: flex;
+        align-items: center;
+      }
+
+      .profile-avatar {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+      }
+
+      .mobile-menu-toggle {
+        display: none;
+        flex-direction: column;
+        cursor: pointer;
+        gap: 4px;
+        background: none;
+        border: none;
+        padding: 8px;
+      }
+
+      .mobile-menu-toggle span {
+        width: 24px;
+        height: 3px;
+        background: #171412;
+        transition: all 0.3s ease;
+      }
+
+      /* Mobile Navigation */
+      .mobile-nav {
+        display: none;
+        flex-direction: column;
+        background: #ffffff;
+        border-top: 1px solid #e5e8eb;
+        padding: 1rem 2.5rem;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        z-index: 99;
+      }
+
+      .mobile-nav.active {
+        display: flex;
+      }
+
+      .mobile-nav-section {
+        margin-bottom: 1.5rem;
+      }
+
+      .mobile-nav-section:last-child {
+        margin-bottom: 0;
+      }
+
+      .mobile-nav-links {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .mobile-nav-link {
+        color: #171412;
+        text-decoration: none;
+        font-size: 1rem;
+        font-weight: 400;
+        padding: 0.5rem 0;
+        transition: color 0.2s ease;
+      }
+
+      .mobile-nav-link:hover,
+      .mobile-nav-link.active {
+        color: #ed7829;
+      }
+
+      .mobile-search-bar {
+        display: flex;
+        align-items: center;
+        background: #f5f2f0;
+        border-radius: 0.75rem;
+        overflow: hidden;
+        margin-bottom: 1.5rem;
+      }
+
+      .mobile-search-icon {
+        padding: 0.5rem 1rem;
+        display: flex;
+        align-items: center;
+      }
+
+      .mobile-search-input {
+        background: #f5f2f0;
+        border: none;
+        padding: 0.5rem 1rem 0.5rem 0.5rem;
+        flex: 1;
+        color: #8a7061;
+        font-size: 1rem;
+      }
+
+      .mobile-search-input::placeholder {
+        color: #8a7061;
+      }
+
+      .mobile-search-input:focus {
+        outline: none;
+      }
+
+      .mobile-profile-notification {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: #f5f2f0;
+        border-radius: 1.25rem;
+        padding: 0.625rem;
+        width: fit-content;
+      }
+
+      /* Main Content */
+      .main-content {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 20px 160px;
+      }
+
+      .page-header {
+        display: flex;
+        align-items: center;
+        padding: 16px;
+        margin-bottom: 12px;
+      }
+
+      .page-title {
+        font-family: "Playfair Display", serif;
+        font-size: 32px;
+        font-weight: 700;
+        color: var(--brand-secondary);
+        line-height: 40px;
+      }
+
+      .trainer-search {
+        padding: 12px 16px;
+        margin-bottom: 32px;
+      }
+
+      .trainer-search-container {
+        display: flex;
+        align-items: center;
+        background: var(--brand-light);
+        border-radius: 12px;
+        overflow: hidden;
+        height: 48px;
+      }
+
+      .trainer-search-icon {
+        padding-left: 16px;
+        padding-right: 8px;
+        color: var(--brand-muted);
+      }
+
+      .trainer-search-input {
+        background: transparent;
+        border: none;
+        outline: none;
+        padding: 8px 16px 8px 8px;
+        font-size: 16px;
+        color: var(--brand-muted);
+        flex: 1;
+      }
+
+      .trainer-search-input::placeholder {
+        color: var(--brand-muted);
+      }
+
+      /* Section Titles */
+      .section-title {
+        font-size: 22px;
+        font-weight: 700;
+        color: var(--brand-secondary);
+        margin-bottom: 16px;
+        padding: 20px 16px 12px 16px;
+      }
+
+      /* Featured Trainers */
+      .featured-trainers {
+        margin-bottom: 24px;
+      }
+
+      .featured-grid {
+        display: flex;
+        gap: 12px;
+        padding: 0 16px;
+        overflow-x: auto;
+      }
+
+      .trainer-card {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        min-width: 160px;
+        flex-shrink: 0;
+        cursor: pointer;
+        transition: transform 0.2s ease;
+      }
+
+      .trainer-card:hover {
+        transform: translateY(-2px);
+      }
+
+      .trainer-image {
+        width: 100%;
+        height: 158px;
+        object-fit: cover;
+        border-radius: 12px;
+      }
+
+      .trainer-info {
+        padding-bottom: 12px;
+      }
+
+      .trainer-name {
+        font-size: 16px;
+        font-weight: 500;
+        color: var(--brand-secondary);
+        margin-bottom: 4px;
+      }
+
+      .trainer-description {
+        font-size: 14px;
+        color: var(--brand-muted);
+        line-height: 21px;
+      }
+
+      /* All Trainers */
+      .all-trainers-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(176px, 1fr));
+        gap: 12px;
+        padding: 0 16px;
+      }
+
+      .all-trainer-card {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        cursor: pointer;
+        transition: transform 0.2s ease;
+      }
+
+      .all-trainer-card:hover {
+        transform: translateY(-2px);
+      }
+
+      .all-trainer-image {
+        width: 100%;
+        height: 176px;
+        object-fit: cover;
+        border-radius: 12px;
+      }
+
+      .all-trainer-info {
+        padding-bottom: 12px;
+      }
+
+      /* Footer */
+      .footer {
+        background: var(--brand-light);
+        padding: 40px 0;
+        margin-top: 60px;
+      }
+
+      .footer-links {
+        display: flex;
+        justify-content: center;
+        gap: 32px;
+        margin-bottom: 20px;
+      }
+
+      .footer-link {
+        font-size: 14px;
+        color: var(--brand-secondary);
+        text-decoration: none;
+        transition: color 0.2s ease;
+      }
+
+      .footer-link:hover {
+        color: var(--brand-primary);
+      }
+
+      .footer-copyright {
+        text-align: center;
+        font-size: 14px;
+        color: var(--brand-muted);
+      }
+
+      /* Responsive Design */
+      @media (max-width: 1200px) {
+        .container {
+          padding: 0 40px;
+        }
+
+        .main-content {
+          padding: 20px 80px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .nav-container {
+          padding: 0.75rem 1.5rem;
+        }
+
+        .nav-menu {
+          display: none;
+        }
+
+        .nav-right {
+          display: none;
+        }
+
+        .mobile-menu-toggle {
+          display: flex;
+        }
+
+        .main-content {
+          padding: 20px;
+        }
+
+        .page-title {
+          font-size: 24px;
+        }
+
+        .featured-grid {
+          flex-direction: column;
+        }
+
+        .trainer-card {
+          min-width: auto;
+        }
+
+        .all-trainers-grid {
+          grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        }
+
+        .footer-links {
+          flex-wrap: wrap;
+          gap: 16px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .all-trainers-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+
+        .nav-container {
+          padding: 0.75rem 1rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <div class="nav-container">
+        <div class="nav-left">
+          <div class="logo">
+            <div class="logo-icon"> <img src="images/logo].jpg" alt="logo"/> </div>
+            <span class="logo-text">HandiKraft</span>
+          </div>
+          
+          <div class="nav-menu">
+            <a href="home.html" class="nav-link">Home</a>
+            <a href="trainers.html" class="nav-link active">Trainers</a>
+            <a href="programs.html" class="nav-link">Programs</a>
+            <a href="marketplace.html" class="nav-link">Marketplace</a>
+            <a href="resources.html" class="nav-link">Resources</a>
+            <a href="about.html" class="nav-link">About Us</a>
+          </div>
+        </div>
+        
+        <div class="nav-right">
+          <div class="search-bar">
+            <div class="search-icon">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M19.5306 18.4694L14.8366 13.7762C17.6629 10.383 17.3204 5.36693 14.0591 2.38935C10.7978 -0.588237 5.77134 -0.474001 2.64867 2.64867C-0.474001 5.77134 -0.588237 10.7978 2.38935 14.0591C5.36693 17.3204 10.383 17.6629 13.7762 14.8366L18.4694 19.5306C18.7624 19.8237 19.2376 19.8237 19.5306 19.5306C19.8237 19.2376 19.8237 18.7624 19.5306 18.4694ZM1.75 8.5C1.75 4.77208 4.77208 1.75 8.5 1.75C12.2279 1.75 15.25 4.77208 15.25 8.5C15.25 12.2279 12.2279 15.25 8.5 15.25C4.77379 15.2459 1.75413 12.2262 1.75 8.5Z"
+                  fill="#8A7061"
+                />
+              </svg>
+            </div>
+            <input type="text" placeholder="Search" class="search-input" />
+          </div>
+          <div class="profile-notification">
+            <div class="notification-icon">
+              <svg width="16" height="18" viewBox="0 0 16 18" fill="none">
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M15.3281 12.7453C14.8945 11.9984 14.25 9.88516 14.25 7.125C14.25 3.67322 11.4518 0.875 8 0.875C4.54822 0.875 1.75 3.67322 1.75 7.125C1.75 9.88594 1.10469 11.9984 0.671094 12.7453C0.445722 13.1318 0.444082 13.6092 0.666796 13.9973C0.889509 14.3853 1.30261 14.6247 1.75 14.625H4.93828C5.23556 16.0796 6.51529 17.1243 8 17.1243C9.48471 17.1243 10.7644 16.0796 11.0617 14.625H14.25C14.6972 14.6244 15.1101 14.3849 15.3326 13.9969C15.5551 13.609 15.5534 13.1317 15.3281 12.7453ZM8 15.875C7.20562 15.8748 6.49761 15.3739 6.23281 14.625H9.76719C9.50239 15.3739 8.79438 15.8748 8 15.875ZM1.75 13.375C2.35156 12.3406 3 9.94375 3 7.125C3 4.36358 5.23858 2.125 8 2.125C10.7614 2.125 13 4.36358 13 7.125C13 9.94141 13.6469 12.3383 14.25 13.375H1.75Z"
+                  fill="#171412"
+                />
+              </svg>
+            </div>
+            <a href="user-profile.html"><img
+              src="images/prof-img.jpeg"
+              alt="Profile"
+              class="profile-avatar"
+            /></a>
+          </div>
+        </div>
+        
+        <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+      
+      <!-- Mobile Navigation -->
+      <div class="mobile-nav" id="mobileNav">
+        <div class="mobile-nav-section">
+          <div class="mobile-nav-links">
+            <a href="home.html" class="mobile-nav-link">Home</a>
+            <a href="trainers.html" class="mobile-nav-link active">Trainers</a>
+            <a href="programs.html" class="mobile-nav-link">Programs</a>
+            <a href="marketplace.html" class="mobile-nav-link">Marketplace</a>
+            <a href="resources.html" class="mobile-nav-link">Resources</a>
+            <a href="about.html" class="mobile-nav-link">About Us</a>
+          </div>
+        </div>
+        
+        <div class="mobile-nav-section">
+          <div class="mobile-search-bar">
+            <div class="mobile-search-icon">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M19.5306 18.4694L14.8366 13.7762C17.6629 10.383 17.3204 5.36693 14.0591 2.38935C10.7978 -0.588237 5.77134 -0.474001 2.64867 2.64867C-0.474001 5.77134 -0.588237 10.7978 2.38935 14.0591C5.36693 17.3204 10.383 17.6629 13.7762 14.8366L18.4694 19.5306C18.7624 19.8237 19.2376 19.8237 19.5306 19.5306C19.8237 19.2376 19.8237 18.7624 19.5306 18.4694ZM1.75 8.5C1.75 4.77208 4.77208 1.75 8.5 1.75C12.2279 1.75 15.25 4.77208 15.25 8.5C15.25 12.2279 12.2279 15.25 8.5 15.25C4.77379 15.2459 1.75413 12.2262 1.75 8.5Z"
+                  fill="#8A7061"
+                />
+              </svg>
+            </div>
+            <input type="text" placeholder="Search" class="mobile-search-input" />
+          </div>
+        </div>
+        
+        <div class="mobile-nav-section">
+          <div class="mobile-profile-notification">
+            <div class="notification-icon">
+              <svg width="16" height="18" viewBox="0 0 16 18" fill="none">
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M15.3281 12.7453C14.8945 11.9984 14.25 9.88516 14.25 7.125C14.25 3.67322 11.4518 0.875 8 0.875C4.54822 0.875 1.75 3.67322 1.75 7.125C1.75 9.88594 1.10469 11.9984 0.671094 12.7453C0.445722 13.1318 0.444082 13.6092 0.666796 13.9973C0.889509 14.3853 1.30261 14.6247 1.75 14.625H4.93828C5.23556 16.0796 6.51529 17.1243 8 17.1243C9.48471 17.1243 10.7644 16.0796 11.0617 14.625H14.25C14.6972 14.6244 15.1101 14.3849 15.3326 13.9969C15.5551 13.609 15.5534 13.1317 15.3281 12.7453ZM8 15.875C7.20562 15.8748 6.49761 15.3739 6.23281 14.625H9.76719C9.50239 15.3739 8.79438 15.8748 8 15.875ZM1.75 13.375C2.35156 12.3406 3 9.94375 3 7.125C3 4.36358 5.23858 2.125 8 2.125C10.7614 2.125 13 4.36358 13 7.125C13 9.94141 13.6469 12.3383 14.25 13.375H1.75Z"
+                  fill="#171412"
+                />
+              </svg>
+            </div>
+            <a href="user-profile.html"><img
+              src="images/prof-img.jpeg"
+              alt="Profile"
+              class="profile-avatar"
+            /></a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <!-- Page Header -->
+      <div class="page-header">
+        <h1 class="page-title">Trainer Profiles</h1>
+      </div>
+
+      <!-- Trainer Search -->
+      <div class="trainer-search">
+        <div class="trainer-search-container">
+          <div class="trainer-search-icon">
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 20 20"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <circle cx="9" cy="9" r="7"></circle>
+              <path d="m18 18-4.3-4.3"></path>
+            </svg>
+          </div>
+          <input
+            type="text"
+            placeholder="Search for trainers"
+            class="trainer-search-input"
+          />
+        </div>
+      </div>
+
+      <!-- Featured Trainers -->
+      <section class="featured-trainers" href="profile.html">
+        <h2 class="section-title">Featured Trainers</h2>
+        <div class="featured-grid">
+          <div class="trainer-card">
+            <a href="profile.html"><img
+              src="images/download (2).jpeg"
+              alt="Kamla"
+              class="trainer-image"
+            /></a>
+            <div class="trainer-info">
+              <h3 class="trainer-name">Kamla</h3>
+              <p class="trainer-description">
+                Offers courses in jewelry making
+              </p>
+            </div>
+          </div>
+          <div class="trainer-card">
+            <a href="profile.html"><img
+              src="images/images (3).jpeg"
+              alt="Arun"
+              class="trainer-image"
+            /></a>
+            <div class="trainer-info">
+              <h3 class="trainer-name">Arun</h3>
+              <p class="trainer-description">
+                Specializes in traditional weaving techniques
+              </p>
+            </div>
+          </div>
+          <div class="trainer-card">
+            <a href="profile.html"><img
+              src="images/self-help-underprivileged-rural-women-doing-folk-painting-to-support-their-families-west-bengal-india-earn-little-money-40563974.webp"
+              alt="Selvi"
+              class="trainer-image"
+            /></a>
+            <div class="trainer-info">
+              <h3 class="trainer-name">Selvi</h3>
+              <p class="trainer-description">
+                Provides training in ceramic art
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- All Trainers -->
+      <section class="all-trainers">
+        <h2 class="section-title">All Trainers</h2>
+        <div class="all-trainers-grid">
+          <div class="all-trainer-card">
+            <a href="profile.html"><img
+              src="images/images (3).jpeg"
+              alt="Arun"
+              class="all-trainer-image"
+            /></a>
+            <div class="all-trainer-info">
+              <h3 class="trainer-name">Arun</h3>
+              <p class="trainer-description">
+                Specializes in traditional weaving techniques
+              </p>
+            </div>
+          </div>
+          <div class="all-trainer-card">
+            <a href="profile.html"><img
+              src="images/download (2).jpeg"
+              alt="Kamla"
+              class="all-trainer-image"
+            /></a>
+            <div class="all-trainer-info">
+              <h3 class="trainer-name">Kamla</h3>
+              <p class="trainer-description">
+                Offers courses in jewelry making
+              </p>
+            </div>
+          </div>
+          <div class="all-trainer-card">
+            <a href="profile.html"><img
+              src="images/download.jpeg"
+              alt="Chinnadurai"
+              class="all-trainer-image"
+            /></a>
+            <div class="all-trainer-info">
+              <h3 class="trainer-name">Chinnadurai</h3>
+              <p class="trainer-description">Pottery Master</p>
+            </div>
+          </div>
+          <div class="all-trainer-card">
+            <a href="profile.html"><img
+              src="images/download (6).jpeg"
+              alt="Selvi"
+              class="all-trainer-image"
+            /></a>
+            <div class="all-trainer-info">
+              <h3 class="trainer-name">Selvi</h3>
+              <p class="trainer-description">
+                Provides training in ceramic art
+              </p>
+            </div>
+          </div>
+          <div class="all-trainer-card">
+            <a href="profile.html"><img
+              src="images/download (7).jpeg"
+              alt="Laloo"
+              class="all-trainer-image"
+            /></a>
+            <div class="all-trainer-info">
+              <h3 class="trainer-name">Laloo</h3>
+              <p class="trainer-description">
+                Focuses on metalwork and sculpture
+              </p>
+            </div>
+          </div>
+          <div class="all-trainer-card">
+            <a href="profile.html">
+            <img
+            src="images/images (2).jpeg"
+            alt="Savitri"
+            class="all-trainer-image"
+            /></a>
+            <div class="all-trainer-info">
+              <h3 class="trainer-name">Savitri</h3>
+              <p class="trainer-description">Teaches the art of glassblowing</p>
+            </div>
+          </div>
+          <div class="all-trainer-card">
+            <a href="profile.html"><img
+              src="images/download (5).jpeg"
+              alt="Anita"
+              class="all-trainer-image"
+            /></a>
+            <div class="all-trainer-info">
+              <h3 class="trainer-name">Anita</h3>
+              <p class="trainer-description">Traditional Weaver</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-links">
+          <a href="about.html" class="footer-link">About Us</a>
+          <a href="contact.html" class="footer-link">Contact</a>
+          <a href="#" class="footer-link">Privacy Policy</a>
+          <a href="#" class="footer-link">Terms of Service</a>
+        </div>
+        <p class="footer-copyright">@2025 Handikraft. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script>
+      // Mobile menu toggle
+      function toggleMobileMenu() {
+        const mobileNav = document.getElementById('mobileNav');
+        mobileNav.classList.toggle('active');
+      }
+
+      // Search functionality
+      document.addEventListener("DOMContentLoaded", function () {
+        const searchInputs = document.querySelectorAll(
+          ".search-field, .trainer-search-input",
+        );
+
+        searchInputs.forEach((input) => {
+          input.addEventListener("keypress", function (e) {
+            if (e.key === "Enter") {
+              handleSearch(this.value);
+            }
+          });
+        });
+
+        function handleSearch(query) {
+          if (query.trim()) {
+            console.log("Searching for:", query);
+            alert(`Searching for: "${query}"`);
+          }
+        }
+
+        // Trainer card interactions
+        // const trainerCards = document.querySelectorAll(
+        //   ".trainer-card, .all-trainer-card",
+        // );
+        // trainerCards.forEach((card) => {
+        //   card.addEventListener("click", function () {
+        //     const trainerName = this.querySelector(".trainer-name").textContent;
+        //     alert(`Viewing profile for ${trainerName}`);
+        //   });
+        // });
+
+        // Navigation
+        const navLinks = document.querySelectorAll(".nav-link");
+        navLinks.forEach((link) => {
+          link.addEventListener("click", function (e) {
+            if (this.getAttribute("href") === "#") {
+              e.preventDefault();
+            }
+            navLinks.forEach((nl) => nl.classList.remove("active"));
+            this.classList.add("active");
+          });
+        });
+
+        // Notification button
+        document
+          .querySelector(".notification-icon")
+          .addEventListener("click", function () {
+            alert("Notifications would open here");
+          });
+
+        // Profile image
+        document
+          .querySelector(".user-avatar")
+          .addEventListener("click", function () {
+            alert("Profile menu would open here");
+          });
+
+        console.log("HandiKraft Trainer Profiles loaded successfully!");
+      });
+    </script>
+  </body>
+</html>

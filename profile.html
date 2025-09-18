@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chinnadurai - Potter | HandiKraft</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&family=Playfair+Display:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <div class="nav-container">
+        <div class="nav-left">
+          <div class="logo">
+            <div class="logo-icon"></div>
+            <span class="logo-text">HandiKraft</span>
+          </div>
+          <ul class="nav-menu">
+            <li><a href="home.html" class="nav-link">Home</a></li>
+            <li><a href="trainers.html" class="nav-link">Trainers</a></li>
+            <li><a href="programs.html" class="nav-link">Programs</a></li>
+            <li><a href="marketplace.html" class="nav-link">Marketplace</a></li>
+            <li><a href="resources.html" class="nav-link">Resources</a></li>
+            <li><a href="about.html" class="nav-link">About Us</a></li>
+          </ul>
+        </div>
+        <div class="nav-right">
+          <div class="search-bar">
+            <div class="search-icon">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M19.5306 18.4694L14.8366 13.7762C17.6629 10.383 17.3204 5.36693 14.0591 2.38935C10.7978 -0.588237 5.77134 -0.474001 2.64867 2.64867C-0.474001 5.77134 -0.588237 10.7978 2.38935 14.0591C5.36693 17.3204 10.383 17.6629 13.7762 14.8366L18.4694 19.5306C18.7624 19.8237 19.2376 19.8237 19.5306 19.5306C19.8237 19.2376 19.8237 18.7624 19.5306 18.4694ZM1.75 8.5C1.75 4.77208 4.77208 1.75 8.5 1.75C12.2279 1.75 15.25 4.77208 15.25 8.5C15.25 12.2279 12.2279 15.25 8.5 15.25C4.77379 15.2459 1.75413 12.2262 1.75 8.5Z"
+                  fill="#8A7061"
+                />
+              </svg>
+            </div>
+            <input type="text" placeholder="Search" class="search-input" />
+          </div>
+          <div class="profile-notification">
+            <div class="notification-icon">
+              <svg width="16" height="18" viewBox="0 0 16 18" fill="none">
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M15.3281 12.7453C14.8945 11.9984 14.25 9.88516 14.25 7.125C14.25 3.67322 11.4518 0.875 8 0.875C4.54822 0.875 1.75 3.67322 1.75 7.125C1.75 9.88594 1.10469 11.9984 0.671094 12.7453C0.445722 13.1318 0.444082 13.6092 0.666796 13.9973C0.889509 14.3853 1.30261 14.6247 1.75 14.625H4.93828C5.23556 16.0796 6.51529 17.1243 8 17.1243C9.48471 17.1243 10.7644 16.0796 11.0617 14.625H14.25C14.6972 14.6244 15.1101 14.3849 15.3326 13.9969C15.5551 13.609 15.5534 13.1317 15.3281 12.7453ZM8 15.875C7.20562 15.8748 6.49761 15.3739 6.23281 14.625H9.76719C9.50239 15.3739 8.79438 15.8748 8 15.875ZM1.75 13.375C2.35156 12.3406 3 9.94375 3 7.125C3 4.36358 5.23858 2.125 8 2.125C10.7614 2.125 13 4.36358 13 7.125C13 9.94141 13.6469 12.3383 14.25 13.375H1.75Z"
+                  fill="#171412"
+                />
+              </svg>
+            </div>
+            <a href="user-profile.html"><img
+              src="images/prof-img.jpeg"
+              alt="Profile"
+              class="profile-avatar"
+            /></a>
+          </div>
+        </div>
+        <div class="mobile-menu-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Profile Header -->
+    <section class="profile-header">
+      <div class="container">
+        <div class="profile-card">
+          <img
+            src="images/download.jpeg"
+            alt="Chinnadurai"
+            class="profile-image"
+          />
+          <div class="profile-info">
+            <h1 class="profile-name">Chinnadurai</h1>
+            <p class="profile-location">Potter from madurai, Tamil nadu</p>
+            <p class="profile-specialty">
+              Specializes in blue pottery and terracotta
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Profile Tabs -->
+    <section class="profile-tabs">
+      <div class="container">
+        <div class="tabs-nav">
+          <button class="tab-btn active" data-tab="about">About</button>
+          <button class="tab-btn" data-tab="portfolio">Portfolio</button>
+          <button class="tab-btn" data-tab="reviews">Reviews</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Profile Content -->
+    <main class="profile-content">
+      <div class="container">
+        <!-- About Tab -->
+        <div class="tab-content active" id="about">
+          <div class="about-section">
+            <h2 class="section-title">About Chinnadurai</h2>
+            <p class="about-description">
+              Chinnadurai is a skilled potter from Madurai, Tamil Nadu,
+              specializing in the traditional art of blue pottery and
+              terracotta. With over 15 years of experience, Chinnadurai creates
+              intricate designs inspired by nature and local culture. His work
+              has been featured in several exhibitions and is highly sought
+              after by collectors and enthusiasts alike.
+            </p>
+          </div>
+
+          <div class="skills-section">
+            <h2 class="section-title">Skills</h2>
+            <div class="skills-tags">
+              <span class="skill-tag">Blue Pottery</span>
+              <span class="skill-tag">Terracotta</span>
+              <span class="skill-tag">Handcrafted</span>
+              <span class="skill-tag">Traditional Designs</span>
+            </div>
+          </div>
+
+          <div class="contact-section">
+            <h2 class="section-title">Contact</h2>
+            <div class="contact-items">
+              <div class="contact-item">
+                <div class="contact-icon">
+                  <svg width="19" height="19" viewBox="0 0 19 19" fill="none">
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M17.8472 12.8556L13.4306 10.8766L13.4184 10.8709C12.9526 10.6717 12.4177 10.7211 11.9963 11.0022C11.9718 11.0183 11.9483 11.0359 11.9259 11.0547L9.64406 13C8.19844 12.2978 6.70594 10.8166 6.00375 9.38969L7.95187 7.07312C7.97062 7.04969 7.98844 7.02625 8.00531 7.00094C8.28032 6.5807 8.32677 6.05073 8.12906 5.58906V5.57781L6.14437 1.15375C5.88009 0.543904 5.246 0.180692 4.58625 0.26125C1.95833 0.607054 -0.00475144 2.84943 0 5.5C0 12.9438 6.05625 19 13.5 19C16.1506 19.0048 18.3929 17.0417 18.7388 14.4137C18.8195 13.7542 18.4567 13.1202 17.8472 12.8556ZM13.5 17.5C6.87558 17.4928 1.50723 12.1244 1.5 5.5C1.4927 3.60618 2.89195 2.00108 4.76906 1.75C4.76869 1.75374 4.76869 1.75751 4.76906 1.76125L6.73781 6.1675L4.8 8.48687C4.78033 8.50951 4.76246 8.53364 4.74656 8.55906C4.45961 8.99938 4.42405 9.55777 4.65281 10.0309C5.50219 11.7681 7.2525 13.5053 9.00844 14.3538C9.48515 14.5804 10.0459 14.5398 10.485 14.2469C10.5091 14.2307 10.5322 14.2131 10.5544 14.1944L12.8334 12.25L17.2397 14.2234C17.2397 14.2234 17.2472 14.2234 17.25 14.2234C17.002 16.1033 15.3962 17.5064 13.5 17.5Z"
+                      fill="#171412"
+                    />
+                  </svg>
+                </div>
+                <div class="contact-info">
+                  <h4 class="contact-label">Phone</h4>
+                  <p class="contact-value">+91-9876543210</p>
+                </div>
+              </div>
+              <div class="contact-item">
+                <div class="contact-icon">
+                  <svg width="20" height="16" viewBox="0 0 20 16" fill="none">
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M19 0.5H1C0.585786 0.5 0.25 0.835786 0.25 1.25V14C0.25 14.8284 0.921573 15.5 1.75 15.5H18.25C19.0784 15.5 19.75 14.8284 19.75 14V1.25C19.75 0.835786 19.4142 0.5 19 0.5ZM10 8.48281L2.92844 2H17.0716L10 8.48281ZM7.25406 8L1.75 13.0447V2.95531L7.25406 8ZM8.36406 9.01719L9.48906 10.0531C9.77592 10.3165 10.2166 10.3165 10.5034 10.0531L11.6284 9.01719L17.0659 14H2.92844L8.36406 9.01719ZM12.7459 8L18.25 2.95437V13.0456L12.7459 8Z"
+                      fill="#171412"
+                    />
+                  </svg>
+                </div>
+                <div class="contact-info">
+                  <h4 class="contact-label">Email</h4>
+                  <p class="contact-value">chinna@gmail.com</p>
+                </div>
+              </div>
+              <div class="contact-item">
+                <div class="contact-icon">
+                  <svg width="18" height="22" viewBox="0 0 18 22" fill="none">
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M9 5C6.92893 5 5.25 6.67893 5.25 8.75C5.25 10.8211 6.92893 12.5 9 12.5C11.0711 12.5 12.75 10.8211 12.75 8.75C12.75 6.67893 11.0711 5 9 5ZM9 11C7.75736 11 6.75 9.99264 6.75 8.75C6.75 7.50736 7.75736 6.5 9 6.5C10.2426 6.5 11.25 7.50736 11.25 8.75C11.25 9.99264 10.2426 11 9 11ZM9 0.5C4.44579 0.505166 0.755167 4.19579 0.75 8.75C0.75 11.6938 2.11031 14.8138 4.6875 17.7734C5.84552 19.1108 7.14886 20.3151 8.57344 21.3641C8.83177 21.545 9.17573 21.545 9.43406 21.3641C10.856 20.3147 12.1568 19.1104 13.3125 17.7734C15.8859 14.8138 17.25 11.6938 17.25 8.75C17.2448 4.19579 13.5542 0.505166 9 0.5ZM9 19.8125C7.45031 18.5938 2.25 14.1172 2.25 8.75C2.25 5.02208 5.27208 2 9 2C12.7279 2 15.75 5.02208 15.75 8.75C15.75 14.1153 10.5497 18.5938 9 19.8125Z"
+                      fill="#171412"
+                    />
+                  </svg>
+                </div>
+                <div class="contact-info">
+                  <h4 class="contact-label">Location</h4>
+                  <p class="contact-value">Madurai, Tamil nadu</p>
+                </div>
+              </div>
+            </div>
+            <button class="btn btn-primary">Contact Artisan</button>
+          </div>
+        </div>
+
+        <!-- Reviews Tab -->
+        <div class="tab-content" id="reviews">
+          <h2 class="section-title">Reviews</h2>
+          <div class="reviews-list">
+            <div class="review-item">
+              <div class="review-header">
+                <img
+                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/3b129e4b7559d2c20d5ceacba640bc51a857404c?width=80"
+                  alt="Anika Verma"
+                  class="reviewer-avatar"
+                />
+                <div class="reviewer-info">
+                  <h4 class="reviewer-name">Anika Verma</h4>
+                  <p class="review-date">2023-08-15</p>
+                </div>
+              </div>
+              <div class="review-rating">
+                <div class="stars">
+                  <span class="star filled">★</span>
+                  <span class="star filled">★</span>
+                  <span class="star filled">★</span>
+                  <span class="star filled">★</span>
+                  <span class="star filled">★</span>
+                </div>
+              </div>
+              <p class="review-text">
+                Chinna's pottery is absolutely stunning! The craftsmanship is
+                impeccable, and the designs are so unique and beautiful. I
+                purchased a vase, and it's become a centerpiece in my living
+                room. Highly recommend!
+              </p>
+              <div class="review-actions">
+                <button class="review-action">
+                  <svg width="18" height="16" viewBox="0 0 18 16" fill="none">
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M17.2812 5.25938C16.9252 4.85594 16.4131 4.62489 15.875 4.625H11.5V3.375C11.5 1.64911 10.1009 0.25 8.375 0.25C8.13818 0.24983 7.9216 0.383527 7.81563 0.595312L4.86406 6.5H1.5C0.809644 6.5 0.25 7.05964 0.25 7.75V14.625C0.25 15.3154 0.809644 15.875 1.5 15.875H14.9375C15.8827 15.8753 16.6803 15.1721 16.7984 14.2344L17.7359 6.73438C17.8032 6.20023 17.6375 5.66297 17.2812 5.25938ZM1.5 7.75H4.625V14.625H1.5V7.75ZM16.4953 6.57812L15.5578 14.0781C15.5184 14.3907 15.2526 14.6251 14.9375 14.625H5.875V7.27266L8.74297 1.53594C9.61946 1.71136 10.2502 2.48112 10.25 3.375V5.25C10.25 5.59518 10.5298 5.875 10.875 5.875H15.875C16.0544 5.87494 16.2252 5.95198 16.3439 6.08652C16.4626 6.22106 16.5177 6.40012 16.4953 6.57812Z"
+                      fill="#8F5770"
+                    />
+                  </svg>
+                  5
+                </button>
+              </div>
+            </div>
+
+            <div class="review-item">
+              <div class="review-header">
+                <img
+                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/924a7d9949dce6a95add6ae4afd29a059977c9ae?width=80"
+                  alt="Rohan Kapoor"
+                  class="reviewer-avatar"
+                />
+                <div class="reviewer-info">
+                  <h4 class="reviewer-name">Rohan Kapoor</h4>
+                  <p class="review-date">2023-07-20</p>
+                </div>
+              </div>
+              <div class="review-rating">
+                <div class="stars">
+                  <span class="star filled">★</span>
+                  <span class="star filled">★</span>
+                  <span class="star filled">★</span>
+                  <span class="star filled">★</span>
+                  <span class="star">★</span>
+                </div>
+              </div>
+              <p class="review-text">
+                I ordered a set of plates from Chinnadurai, and they arrived in
+                perfect condition. The quality is excellent, and the patterns
+                are even more beautiful in person. The only reason I'm giving 4
+                stars is because the delivery took a bit longer than expected.
+              </p>
+              <div class="review-actions">
+                <button class="review-action">
+                  <svg width="18" height="16" viewBox="0 0 18 16" fill="none">
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M17.2812 5.25938C16.9252 4.85594 16.4131 4.62489 15.875 4.625H11.5V3.375C11.5 1.64911 10.1009 0.25 8.375 0.25C8.13818 0.24983 7.9216 0.383527 7.81563 0.595312L4.86406 6.5H1.5C0.809644 6.5 0.25 7.05964 0.25 7.75V14.625C0.25 15.3154 0.809644 15.875 1.5 15.875H14.9375C15.8827 15.8753 16.6803 15.1721 16.7984 14.2344L17.7359 6.73438C17.8032 6.20023 17.6375 5.66297 17.2812 5.25938ZM1.5 7.75H4.625V14.625H1.5V7.75ZM16.4953 6.57812L15.5578 14.0781C15.5184 14.3907 15.2526 14.6251 14.9375 14.625H5.875V7.27266L8.74297 1.53594C9.61946 1.71136 10.2502 2.48112 10.25 3.375V5.25C10.25 5.59518 10.5298 5.875 10.875 5.875H15.875C16.0544 5.87494 16.2252 5.95198 16.3439 6.08652C16.4626 6.22106 16.5177 6.40012 16.4953 6.57812Z"
+                      fill="#8F5770"
+                    />
+                  </svg>
+                  2
+                </button>
+              </div>
+            </div>
+
+            <div class="review-item">
+              <div class="review-header">
+                <img
+                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/26894427b41e2c686388910e2a9c9d6cb9a22d7b?width=80"
+                  alt="Divya Patel"
+                  class="reviewer-avatar"
+                />
+                <div class="reviewer-info">
+                  <h4 class="reviewer-name">Divya Patel</h4>
+                  <p class="review-date">2023-06-10</p>
+                </div>
+              </div>
+              <div class="review-rating">
+                <div class="stars">
+                  <span class="star filled">★</span>
+                  <span class="star filled">★</span>
+                  <span class="star filled">★</span>
+                  <span class="star filled">★</span>
+                  <span class="star filled">★</span>
+                </div>
+              </div>
+              <p class="review-text">
+                Chinnadurai's work is truly exceptional. I bought a bowl as a
+                gift for a friend, and she absolutely loved it. The attention to
+                detail and the artistry are remarkable. I'll definitely be
+                purchasing more items in the future.
+              </p>
+              <div class="review-actions">
+                <button class="review-action">
+                  <svg width="18" height="16" viewBox="0 0 18 16" fill="none">
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M17.2812 5.25938C16.9252 4.85594 16.4131 4.62489 15.875 4.625H11.5V3.375C11.5 1.64911 10.1009 0.25 8.375 0.25C8.13818 0.24983 7.9216 0.383527 7.81563 0.595312L4.86406 6.5H1.5C0.809644 6.5 0.25 7.05964 0.25 7.75V14.625C0.25 15.3154 0.809644 15.875 1.5 15.875H14.9375C15.8827 15.8753 16.6803 15.1721 16.7984 14.2344L17.7359 6.73438C17.8032 6.20023 17.6375 5.66297 17.2812 5.25938ZM1.5 7.75H4.625V14.625H1.5V7.75ZM16.4953 6.57812L15.5578 14.0781C15.5184 14.3907 15.2526 14.6251 14.9375 14.625H5.875V7.27266L8.74297 1.53594C9.61946 1.71136 10.2502 2.48112 10.25 3.375V5.25C10.25 5.59518 10.5298 5.875 10.875 5.875H15.875C16.0544 5.87494 16.2252 5.95198 16.3439 6.08652C16.4626 6.22106 16.5177 6.40012 16.4953 6.57812Z"
+                      fill="#8F5770"
+                    />
+                  </svg>
+                  4
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
